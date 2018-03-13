@@ -1,0 +1,103 @@
+extends layout
+block content
+    .about
+        .container
+            h3.tittle 关于我们
+
+            //.col-md-5.about-grid-left.text-center
+            .about-grid-left
+            img(src="images/about.jpg", alt="")
+
+            //.col-md-7.about-grid
+            //    h4 NEQUE PORRO QUISQUAM EST, QUI
+            //
+            //    p
+            //        Sed ut perspiciatis unde omnis iste natus error sit
+            //        voluptatem accusantium doloremque laudantium, totam rem aperiam,
+            //        eaque ipsa quae ab illo inventore veritatis et numquam eius modi
+            //        tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+            //        Ut enim ad minima veniam, quis nostrum
+            //
+            //    p
+            //        numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+            //        Ut enim ad minima veniam, quis nostrum exercitation modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+            //        Ut enim ad minima veniam, quis
+            //
+            //.clearfix
+    // about-bottom
+    //.about-bottom
+    //    .container
+    //        .about-bottom-grids
+    //            .col-md-7.about-bottom-grid-left
+    //                h3.tittle.t-two OUR TREATMENTS
+    //
+    //                h4
+    //                    OPTIO CUMQUE NIHIL IMPEDIT QUO MINUS ID QUOD MAXIME PLACEAT
+    //                    FACERE POSSIMUS, OMNIS VOLUPTAS ASSUMENDA EST, OMNIS
+    //
+    //                p
+    //                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+    //                    consectetur, adipisci velit, sed quia non numquam eius modi tempora
+    //                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+    //                    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+    //                    suscipit laboriosam.
+    //
+    //            .col-md-5.about-bottom-grid-right
+    //                h3.tittle.t-two Testimonials
+    //
+    //                .about-bottom-grid-right-grid
+    //                    .about-bottom-grid-right-grdl
+    //                        img.img-responsive(src="images/about.jpg", alt=" ")
+    //
+    //                    .about-bottom-grid-right-grdr
+    //                        p
+    //                            span N
+    //                                eque porro quisquam est,
+    //                        qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+    //                            sed quia non numquam eius modi.
+    //
+    //                    .clearfix
+    //
+    //                .about-bottom-grid-right-grid
+    //                    .about-bottom-grid-right-grdl
+    //                        img.img-responsive(src="images/about.jpg", alt=" ")
+    //
+    //                    .about-bottom-grid-right-grdr
+    //                        p
+    //                            span R
+    //                                eque porro quisquam est,
+    //                                    qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+    //                                    sed quia non numquam eius modi.
+    //
+    //                    .clearfix
+    //
+    //            .clearfix
+    // //about-bottom
+    // contact
+
+    // //contact
+    // copy-right
+    include copyright
+    // //copy-right
+    // Bootstrap core JavaScript
+    // Placed at the end of the document so the pages load faster
+    // js
+    script(src="js/bootstrap.js")
+    // js
+    // smooth scrolling
+    script(type="text/javascript").
+        $(document).ready(function () {
+            /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+            */
+            $().UItoTop({easingType: 'easeOutQuart'});
+        });
+
+    a#toTop(href="#", style="display: block;")
+        span#toTopHover(style="opacity: 1;")
+    // //smooth scrolling

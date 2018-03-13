@@ -1,0 +1,59 @@
+extends layout
+block content
+    // contact-us
+    .contact-us
+        .container
+            h3.tittle CONTACT
+
+            .contact-grids
+                .col-md-4.contact-grid.text-center
+                    .point-icon
+                        span.glyphicon.glyphicon-map-marker(aria-hidden="true")
+
+                    p Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia
+
+                .col-md-4.contact-grid.text-center
+                    .point-icon
+                        span.glyphicon.glyphicon-envelope(aria-hidden="true")
+
+                    p
+                        a(href="mail-to:sample@example.com") rudhisasmito@gmail.com
+
+                .col-md-4.contact-grid.text-center
+                    .point-icon
+                        span.glyphicon.glyphicon-earphone(aria-hidden="true")
+
+                    p +613 0000 0000
+
+                .clearfix
+
+
+    // //contact-us
+    // contact
+
+    // //contact
+    // copy-right
+    include copyright
+    // //copy-right
+    // Bootstrap core JavaScript
+    // Placed at the end of the document so the pages load faster
+    // js
+    script(src="js/bootstrap.js")
+    // js
+    // smooth scrolling
+    script(type="text/javascript").
+        $(document).ready(function () {
+            /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+            */
+            $().UItoTop({easingType: 'easeOutQuart'});
+        });
+
+    a#toTop(href="#", style="display: block;")
+        span#toTopHover(style="opacity: 1;")
+    // //smooth scrolling

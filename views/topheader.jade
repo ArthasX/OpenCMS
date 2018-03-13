@@ -1,0 +1,42 @@
+// top-header
+// bottom
+section.button
+    button#showLeftPush
+        img(src="images/menu.png", alt="")
+
+nav#cbp-spmenu-s1.cbp-spmenu.cbp-spmenu-vertical.cbp-spmenu-left
+    h3 Menu
+
+    a(href="/") 主页
+
+    a(href="/about") 关于我们
+
+    a(href="/blog") 新闻资讯
+
+    //a(href="shortcodes.html") SHORT CODES
+    //
+    //a(href="gallery.html") GALLERY
+
+    a(href="/contact") 联系我们
+// Classie - class helper functions by @desandro https://github.com/desandro/classie
+script(src="js/classie.js")
+
+script.
+    var menuLeft = document.getElementById('cbp-spmenu-s1'),
+        showLeftPush = document.getElementById('showLeftPush'),
+        showRightPush = document.getElementById('showRightPush'),
+        body = document.body;
+    showLeftPush.onclick = function () {
+        classie.toggle(this, 'active');
+        classie.toggle(body, 'cbp-spmenu-push-toright');
+        classie.toggle(menuLeft, 'cbp-spmenu-open');
+        disableOther('showLeftPush');
+    };
+    function disableOther(button) {
+        if (button !== 'showLeftPush') {
+            classie.toggle(showLeftPush, 'disabled');
+        }
+        if (button !== 'showRightPush') {
+            classie.toggle(showRightPush, 'disabled');
+        }
+    }

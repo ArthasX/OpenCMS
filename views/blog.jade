@@ -1,0 +1,78 @@
+extends layout
+block content
+    .blog-page
+        .container
+            h3.tittle BLOGS
+             //- var page=pages;
+            p #{ss}
+            p #{blogs}
+            p #{blogs[0].title}
+            each blog in blogs
+                .blog-pag
+                    .blog-page-grids
+                        .blog-page-grid
+                            h3
+                                a(href="single.html")=blog.title
+
+                            p='发布日期:'+blog.date
+
+                        .clearfix
+
+                    .blog-page-grids-bottom
+                        .blog-page-grids-bot
+                            a(href="single.html")
+                                img(src="images/4.jpg", alt=" ")
+                        //content
+                        .blog-page-grids-bot1
+                            h4 porttitor accumsan tincidunt
+                            p=blog.content
+                            .more
+                                a.hvr-outline-out.button2(href="single.html") Read More
+
+                    .clearfix
+
+
+
+
+            nav
+
+                ul.pagination.blg-pg.text-center
+                    li
+                        a(href="#", aria-label="Previous")
+                            span(aria-hidden="true") «
+
+                    - for (var index=1;index<=pages;index++){
+                            li
+                                a(href="?pages="+index)=index
+                    - }
+
+                    li
+                        a(href="#", aria-label="Next")
+                            span(aria-hidden="true") »
+    // //blog
+
+    // copy-right
+    include copyright
+    //copy-right
+    // Bootstrap core JavaScript
+    // Placed at the end of the document so the pages load faster
+    // js
+    script(src="js/bootstrap.js")
+    // js
+    // smooth scrolling
+    script(type="text/javascript").
+        $(document).ready(function () {
+            /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+            */
+            $().UItoTop({easingType: 'easeOutQuart'});
+        });
+
+    a#toTop(href="#", style="display: block;")
+        span#toTopHover(style="opacity: 1;")
+    // //smooth scrolling

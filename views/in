@@ -1,0 +1,390 @@
+doctype html
+html
+    head
+        title Home
+        // for-mobile-apps
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+        meta(name="keywords", content="Medi Cure Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, \
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design")
+        script(type="application/x-javascript").
+            addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+            function hideURLbar(){ window.scrollTo(0,1); }
+        // //for-mobile-apps
+        link(href="css/bootstrap.css", rel="stylesheet", type="text/css", media="all")
+        link(href="css/style.css", rel="stylesheet", type="text/css", media="all")
+        // toggle menu links
+        link(href="css/component.css", rel="stylesheet", type="text/css")
+        // //menu links
+        link(href="css/popuo-box.css", rel="stylesheet", type="text/css", media="all")
+        // effect9 links
+        link(href="css/ihover.css", rel="stylesheet", media="all")
+        // js
+        script(src="js/jquery-1.11.1.min.js")
+        // //js
+        // <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+        // start-smoth-scrolling
+        script(type="text/javascript", src="js/move-top.js")
+
+        script(type="text/javascript", src="js/easing.js")
+
+        script(type="text/javascript").
+            jQuery(document).ready(function($) {
+                $(".scroll").click(function(event){
+                    event.preventDefault();
+                    $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+                });
+            });
+        // start-smoth-scrolling
+    // slide-toggle-menu
+    body.cbp-spmenu-push
+        // top-header
+        // bottom
+        section.button
+            button#showLeftPush
+                img(src="images/menu.png", alt="")
+
+        nav#cbp-spmenu-s1.cbp-spmenu.cbp-spmenu-vertical.cbp-spmenu-left
+            h3 Menu
+
+            a.active(href="index.html") HOME
+
+            a(href="/about") 关于我们
+
+            a(href="blog.html") BLOG
+
+            a(href="shortcodes.html") SHORT CODES
+
+            a(href="gallery.html") GALLERY
+
+            a(href="contact.html") CONTACT
+        // Classie - class helper functions by @desandro https://github.com/desandro/classie
+        script(src="js/classie.js")
+
+        script.
+            var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+                showLeftPush = document.getElementById( 'showLeftPush' ),
+                showRightPush = document.getElementById( 'showRightPush' ),
+                body = document.body;
+            showLeftPush.onclick = function() {
+                classie.toggle( this, 'active' );
+                classie.toggle( body, 'cbp-spmenu-push-toright' );
+                classie.toggle( menuLeft, 'cbp-spmenu-open' );
+                disableOther( 'showLeftPush' );
+            };
+            function disableOther( button ) {
+                if( button !== 'showLeftPush' ) {
+                    classie.toggle( showLeftPush, 'disabled' );
+                }
+                if( button !== 'showRightPush' ) {
+                    classie.toggle( showRightPush, 'disabled' );
+                }
+            }
+        // banner
+        .banner
+            .logo
+                h1
+                    a(href="index.html") Relax & Enjoy
+
+            .search
+                a.play-icon.popup-with-zoom-anim(href="#small-dialog")
+                    i.glyphicon.glyphicon-search
+
+            script(src="js/jquery.magnific-popup.js", type="text/javascript")
+
+            #small-dialog.mfp-hide
+                .search-top
+                    .login
+                        input(type="submit", value="")
+
+                        input(type="text", value="Type something...", onfocus="this.value = '';", onblur="if (this.value == '') {this.value = '';}")
+
+                script.
+                    $(document).ready(function() {
+                        $('.popup-with-zoom-anim').magnificPopup({
+                            type: 'inline',
+                            fixedContentPos: false,
+                            fixedBgPos: true,
+                            overflowY: 'auto',
+                            closeBtnInside: true,
+                            preloader: false,
+                            midClick: true,
+                            removalDelay: 300,
+                            mainClass: 'my-mfp-zoom-in'
+                        });
+                    });
+
+            .banner-info
+                script(src="js/responsiveslides.min.js")
+
+                script.
+                    // You can also use "$(window).load(function() {"
+                    $(function () {
+                        // Slideshow 4
+                        $("#slider3").responsiveSlides({
+                            auto: true,
+                            pager: false,
+                            nav: true,
+                            speed: 500,
+                            namespace: "callbacks",
+                            before: function () {
+                                $('.events').append("<li>before event fired.</li>");
+                            },
+                            after: function () {
+                                $('.events').append("<li>after event fired.</li>");
+                            }
+                        });
+                    });
+
+                #top.callbacks_container
+                    ul#slider3.rslides
+                        li
+                            .banner-text
+                                h3
+                                    MAKE YOUR LIFE MORE
+                                span  HEALTHY AND SAFE
+
+                                p
+                                    Neque porro quisquam est, qui dolorem ipsum quia
+                                    dolor sit amet, consectetur, adipisci velit, sed
+                                    quia non numquam eius modi tempora incidunt ut
+                                    labore et dolore magnam aliquam quaerat voluptatem.
+
+                                .read.text-center
+                                    a.hvr-outline-out.button2(href="single.html") READ MORE
+
+                        li
+                            .banner-text
+                                h3
+                                    BETTER HEALTH CARE IS CLOSER
+                                span  THAN YOU THINK
+
+                                p
+                                    Neque porro quisquam est, qui dolorem ipsum quia
+                                    dolor sit amet, consectetur, adipisci velit, sed
+                                    quia non numquam eius modi tempora incidunt ut
+                                    labore et dolore magnam aliquam quaerat voluptatem.
+
+                                .read.text-center
+                                    a.hvr-outline-out.button2(href="single.html") READ MORE
+
+                .down-arrow.text-center
+                    a.scroll(href="#banner-bottom")
+                        span.glyphicon.glyphicon-chevron-down(aria-hidden="true")
+        // //banner
+
+        // banner-bottom
+        #banner-bottom.banner-bottom
+            .container
+                h3.tittle WELCOME TO MEDI CURE
+
+                p
+                    Neque porro quisquam est, qui dolorem ipsum quia
+                    dolor sit amet, consectetur, adipisci velit, sed
+                    quia non numquam eius modi tempora incidunt ut
+                    labore et dolore magnam aliquam quaerat voluptatem.
+                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                    aut odit aut fugit, sed quia consequuntur magni dolores
+                    eos qui ratione voluptatem sequi nesciunt.
+
+                ul#sti-menu.sti-menu
+                    li(data-hovercolor="#fff")
+                        a(href="#")
+                            h4.sti-item(data-type="mText") HEALTH
+
+                            p.sti-item(data-type="sText") Voluptatem quia voluptas
+
+                            span.sti-icon.glyphicon.glyphicon-plus.sti-item(data-type="icon")
+
+                    li(data-hovercolor="#fff")
+                        a(href="#")
+                            h4.sti-item(data-type="mText") SURGERY
+
+                            p.sti-item(data-type="sText") Voluptatem quia voluptas
+
+                            span.sti-icon.glyphicon.glyphicon-scissors.sti-item(data-type="icon")
+
+                    li(data-hovercolor="#fff")
+                        a(href="#")
+                            h4.sti-item(data-type="mText") CAREERS
+
+                            p.sti-item(data-type="sText") Voluptatem quia voluptas
+
+                            span.sti-icon.glyphicon.glyphicon-education.sti-item(data-type="icon")
+
+                    li(data-hovercolor="#fff")
+                        a(href="#")
+                            h4.sti-item(data-type="mText") PLANNING
+
+                            p.sti-item(data-type="sText") Voluptatem quia voluptas
+
+                            span.sti-icon.glyphicon.glyphicon-apple.sti-item(data-type="icon")
+
+
+                    script(type="text/javascript", src="js/jquery.iconmenu.js")
+
+                    script(type="text/javascript").
+                        $(function() {
+                            $('#sti-menu').iconmenu({
+                                animMouseenter	: {
+                                    'mText' : {speed : 400, easing : 'easeOutExpo', delay : 140, dir : 1},
+                                    'sText' : {speed : 400, easing : 'easeOutExpo', delay : 0, dir : 1},
+                                    'icon'  : {speed : 800, easing : 'easeOutBounce', delay : 280, dir : 1}
+                                },
+                                animMouseleave	: {
+                                    'mText' : {speed : 400, easing : 'easeInExpo', delay : 140, dir : 1},
+                                    'sText' : {speed : 400, easing : 'easeInExpo', delay : 280, dir : 1},
+                                    'icon'  : {speed : 400, easing : 'easeInExpo', delay : 0, dir : 1}
+                                }
+                            });
+                        });
+        // //banner-bottom
+        // measure
+        .measure
+            .container
+                h3 WE MEASURE SUCCESS IN SMILES AND IMPROVEMENT IN HEALTH AND QUALITY OF LIFE.
+        // measure
+        // qualified
+        .qualified
+            .container
+                h3.tittle ONLY QUALIFIED MEDICAL SERVICES
+
+                .qualified-grids
+                    .col-md-7.qualify-left
+                        .qualify-left-grids
+                            .qua-left-gd.text-right
+                                h4 voluptatem quia
+
+                                p
+                                    Neque porro quisquam est, qui dolorem ipsum quia
+                                    dolor sit amet, consectetur, adipisci velit, sed
+                                    quia non numquam eius.
+
+                            .qua-right-gd.text-center
+                                img(src="images/t2.png", alt="")
+
+                            .clearfix
+
+                        .qualify-left-grids
+                            .qua-left-gd.text-right
+                                h4 voluptatem quia
+
+                                p
+                                    Neque porro quisquam est, qui dolorem ipsum quia
+                                    dolor sit amet, consectetur, adipisci velit, sed
+                                    quia non numquam eius.
+
+                            .qua-right-gd.text-center
+                                img(src="images/t3.png", alt="")
+
+                            .clearfix
+
+                    .col-md-5.qualify-right.grid
+                        figure.effect-moses
+                            img(src="images/aa.jpg", alt="")
+
+                            figcaption
+                                h4
+                                    MEDI
+                                span CURE
+
+                                p voluptatem quia voluptas sit.
+
+                    .clearfix
+        // qualified
+        .welcome-grids
+            .container
+                h3.tittle THE BEST MEDICINE IS PREVENTION
+
+                .col-md-3.welcome-grid.text-center
+                    .ih-item.circle.effect9.left_to_right
+                        a(href="#")
+                            .img
+                                img(src="images/22.jpg", alt="")
+
+                            .info
+                                h4 MEDI CURE
+
+                                p Description goes here
+
+                .col-md-3.welcome-grid.text-center
+                    .ih-item.circle.effect9.left_to_right
+                        a(href="#")
+                            .img
+                                img(src="images/3.jpg", alt="")
+
+                            .info
+                                h4 MEDI CURE
+
+                                p Description goes here
+
+                .col-md-3.welcome-grid.text-center
+                    .ih-item.circle.effect9.left_to_right
+                        a(href="#")
+                            .img
+                                img(src="images/2.jpg", alt="")
+
+                            .info
+                                h4 MEDI CURE
+
+                                p Description goes here
+
+                .col-md-3.welcome-grid.text-center
+                    .ih-item.circle.effect9.left_to_right
+                        a(href="#")
+                            .img
+                                img(src="images/111.jpg", alt="")
+
+                            .info
+                                h4 MEDI CURE
+
+                                p Description goes here
+
+                .clearfix
+        // //qualified
+        // contact
+        // <div class="contact-home">
+        // <div class="map-home">
+        // <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2482.432383990807!2d0.028213999961443994!3d51.52362882484525!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1423469959819"></iframe>
+        // <div class="map-pos">
+        // <div class="login-pad">
+        // <h2>MAKE AN APPOINTMENT</h2>
+        // <form>
+        // <input type="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" required="">
+        // <input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+        // <input type="text" value="Mobile" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile';}" required="">
+        // <label class="checkbox"><input type="checkbox" name="checkbox" checked><i> </i>Subscribe in your Newsletter</label>
+        // <textarea placeholder="Message" required></textarea>
+        // <input type="submit" value="SEND">
+        // </form>
+        // </div>
+        // <div class="clearfix"></div>
+        // </div>
+        // </div>
+        // </div>
+        // //contact
+        // copy-right
+        include copyright
+        // //copy-right
+        // Bootstrap core JavaScript
+        // Placed at the end of the document so the pages load faster
+        // js
+        script(src="js/bootstrap.js")
+        // js
+        // smooth scrolling
+        script(type="text/javascript").
+            $(document).ready(function() {
+                /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+                */
+                $().UItoTop({ easingType: 'easeOutQuart' });
+            });
+
+        a#toTop(href="#", style="display: block;")
+            span#toTopHover(style="opacity: 1;")
+        // //smooth scrolling

@@ -1,0 +1,314 @@
+doctype html
+html
+    head
+        title Single
+        // for-mobile-apps
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        meta(name='keywords', content='Medi Cure Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, \
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design')
+        script(type='application/x-javascript').
+            addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+            function hideURLbar(){ window.scrollTo(0,1); }
+        // //for-mobile-apps
+        link(href='../public/css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
+        link(href='../public/css/style.css', rel='stylesheet', type='text/css', media='all')
+        // toggle menu links
+        link(href='../public/css/component.css', rel='stylesheet', type='text/css')
+        // //menu links
+        link(href='../public/css/popuo-box.css', rel='stylesheet', type='text/css', media='all')
+        // effect9 links
+        link(href='../public/css/ihover.css', rel='stylesheet', media='all')
+        // js
+        script(src='../public/js/jquery-1.11.1.min.js')
+        // //js
+        link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic', rel='stylesheet', type='text/css')
+        // start-smoth-scrolling
+        script(type='text/javascript', src='../public/js/move-top.js')
+        script(type='text/javascript', src='../public/js/easing.js')
+        script(type='text/javascript').
+            jQuery(document).ready(function($) {
+                $(".scroll").click(function(event){
+                    event.preventDefault();
+                    $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+                });
+            });
+        // start-smoth-scrolling
+    // slide-toggle-menu
+    body.cbp-spmenu-push
+        // top-header
+        // bottom
+        section.button
+            button#showLeftPush
+                img(src='../public/images/menu.png', alt='')
+        nav#cbp-spmenu-s1.cbp-spmenu.cbp-spmenu-vertical.cbp-spmenu-left
+            h3 Menu
+            a(href='index.html') HOME
+            a(href='about.html') ABOUT
+            a(href='blog.html') BLOG
+            a(href='shortcodes.html') SHORT CODES
+            a(href='gallery.html') GALLERY
+            a(href='contact.html') CONTACT
+        // Classie - class helper functions by @desandro https://github.com/desandro/classie
+        script(src='../public/js/classie.js')
+        script.
+            var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+                showLeftPush = document.getElementById( 'showLeftPush' ),
+                showRightPush = document.getElementById( 'showRightPush' ),
+                body = document.body;
+            showLeftPush.onclick = function() {
+                classie.toggle( this, 'active' );
+                classie.toggle( body, 'cbp-spmenu-push-toright' );
+                classie.toggle( menuLeft, 'cbp-spmenu-open' );
+                disableOther( 'showLeftPush' );
+            };
+            function disableOther( button ) {
+                if( button !== 'showLeftPush' ) {
+                    classie.toggle( showLeftPush, 'disabled' );
+                }
+                if( button !== 'showRightPush' ) {
+                    classie.toggle( showRightPush, 'disabled' );
+                }
+            }
+        // banner
+        .banner.page-head
+            .logo
+                h1
+                    a(href='index.html') MEDI CURE
+            .search
+                a.play-icon.popup-with-zoom-anim(href='#small-dialog')
+                    i.glyphicon.glyphicon-search
+            script(src='../public/js/jquery.magnific-popup.js', type='text/javascript')
+            #small-dialog.mfp-hide
+                .search-top
+                    .login
+                        input(type='submit', value='')
+                        input(type='text', value='Type something...', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = '';}")
+                script.
+                    $(document).ready(function() {
+                        $('.popup-with-zoom-anim').magnificPopup({
+                            type: 'inline',
+                            fixedContentPos: false,
+                            fixedBgPos: true,
+                            overflowY: 'auto',
+                            closeBtnInside: true,
+                            preloader: false,
+                            midClick: true,
+                            removalDelay: 300,
+                            mainClass: 'my-mfp-zoom-in'
+                        });
+                    });
+        // //banner
+        // single
+        // blog-starts
+        .blog-section
+            .container
+                h3.tittle BLOG
+                // single-page
+                .banner-bdy.sig
+                    .single
+                        .sing-img-text
+                            img(src='../public/images/44.jpg', alt=' ')
+                            .sing-img-text1
+                                h3 Nam libero tempore, cum soluta nobis est eligendi
+                                .admin-tag1
+                                    p
+                                        | Posted by
+                                        a(href='single.html') Admin
+                                        |  in
+                                        a(href='#') General
+                                        |
+                                        a(href='single.html') 10 Comments
+                                p.est
+                                    | Maecenas et laoreet neque. Aenean tempus feugiat eros, eu convallis ligula tincidunt a. Nam facilisis enim at augue viverra ultrices. Etiam nec mollis est, non pulvinar arcu. Cras adipiscing nisi leo, non faucibus est commodo in. Integer nec erat convallis, cursus magna et, egestas odio. Donec nec quam nibh. Nam ante ipsum, sollicitudin sed augue sit amet, accumsan accumsan felis. Vivamus laoreet ligula mi.
+                                    span
+                                        | Nunc ornare, justo eget volutpat porttitor, massa felis rhoncus dui, eu convallis enim lectus vel velit. Nam ac aliquam ligula, ultrices blandit leo. Suspendisse sed semper libero. Integer bibendum orci non mauris pharetra scelerisque. Nunc vitae tempor augue, in condimentum mi. In eu velit hendrerit, tempor tortor at, hendrerit erat. Donec feugiat tristique turpis non sagittis. Donec pharetra hendrerit vulputate.
+                                    | 						Phasellus facilisis tincidunt velit, ac tincidunt diam fermentum consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed vel facilisis lorem. Vivamus non feugiat mauris, et rhoncus est. Curabitur aliquam ac lacus ac facilisis. Sed sodales ut nibh eget lacinia. Morbi malesuada semper elit eu interdum. Ut et tellus non enim tristique lacinia. Duis neque sem, vehicula id augue quis, porttitor consectetur tellus. Sed risus massa, tristique vitae tempus vitae, bibendum sit amet metus. Vestibulum in fermentum neque.
+                                    span
+                                        | Vestibulum condimentum est feugiat, porta massa at, fermentum magna. Fusce et porta risus, sed sagittis dolor. Nunc lectus felis, mattis sed congue eget, dictum vitae nisi. Cras non sodales est. Aliquam mollis consequat facilisis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Proin suscipit odio vitae imperdiet varius. Mauris elementum enim eget vestibulum imperdiet. Aliquam mollis purus dui, eget aliquet elit malesuada ut. Donec mollis sapien eu ultrices molestie. Cras consectetur semper facilisis.
+                                .com
+                                    h3.commant Comments
+                                    ul.media-list
+                                        li.media
+                                            .media-left
+                                                a(href='#')
+                                                    span.glyphicon.glyphicon-user
+                                            .media-body
+                                                h4.media-heading Simmy
+                                                p
+                                                    | Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                                                    | scelerisque ante sollicitudin commodo. Cras purus odio,
+                                                    | vestibulum in vulputate at, tempus viverra turpis.
+                                                    | Fusce condimentum nunc ac nisi vulputate fringilla.
+                                                    | Donec lacinia congue felis in faucibus.
+                                                a(href='#') Reply
+                                        li.media
+                                            .media-left
+                                                a(href='#')
+                                                    span.glyphicon.glyphicon-user
+                                            .media-body
+                                                h4.media-heading Sandra Rickon
+                                                p
+                                                    | Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                                                    | scelerisque ante sollicitudin commodo. Cras purus odio,
+                                                    | vestibulum in vulputate at, tempus viverra turpis.
+                                                    | Fusce condimentum nunc ac nisi vulputate fringilla.
+                                                    | Donec lacinia congue felis in faucibus.
+                                                a(href='#') Reply
+                                        li.media
+                                            .media-left
+                                                a(href='#')
+                                                    span.glyphicon.glyphicon-user
+                                            .media-body
+                                                h4.media-heading Rita Rider
+                                                p
+                                                    | Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                                                    | scelerisque ante sollicitudin commodo. Cras purus odio,
+                                                    | vestibulum in vulputate at, tempus viverra turpis.
+                                                    | Fusce condimentum nunc ac nisi vulputate fringilla.
+                                                    | Donec lacinia congue felis in faucibus.
+                                                a(href='#') Reply
+                        .sing-img-text-left
+                            .blog-right1
+                                .search11
+                                    h3 Newsletter
+                                    form
+                                        input(type='text', value='Email...', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Email...';}", required='')
+                                        input(type='submit', value='Subscribe')
+                                .categories
+                                    h3 Categories
+                                    ul
+                                        li
+                                            a(href='#')
+                                                span.glyphicon.glyphicon-arrow-right(aria-hidden='true')
+                                                | Aliquam dapibus tincidunt
+                                        li
+                                            a(href='#')
+                                                span.glyphicon.glyphicon-arrow-right(aria-hidden='true')
+                                                | Donec sollicitudin molestie
+                                        li
+                                            a(href='#')
+                                                span.glyphicon.glyphicon-arrow-right(aria-hidden='true')
+                                                | Fusce feugiat malesuada odio
+                                        li
+                                            a(href='#')
+                                                span.glyphicon.glyphicon-arrow-right(aria-hidden='true')
+                                                | Cum sociis natoque penatibus
+                                        li
+                                            a(href='#')
+                                                span.glyphicon.glyphicon-arrow-right(aria-hidden='true')
+                                                | Magnis dis parturient montes
+                                        li
+                                            a(href='#')
+                                                span.glyphicon.glyphicon-arrow-right(aria-hidden='true')
+                                                | Donec sollicitudin molestie
+                                .categories.categories-mid
+                                    h3 Archives
+                                    ul
+                                        li
+                                            a(href='#') May 20,2009
+                                        li
+                                            a(href='#') July 31,2010
+                                        li
+                                            a(href='#') January 20,2012
+                                        li
+                                            a(href='#') November 2,2012
+                                        li
+                                            a(href='#') December 25,2014
+                                        li
+                                            a(href='#') January 14,2015
+                                .related-posts
+                                    h3 Related Posts
+                                    .related-post
+                                        .related-post-left
+                                            a(href='single.html')
+                                                img(src='../public/images/4.jpg', alt=' ')
+                                        .related-post-right
+                                            h4
+                                                a(href='single.html') Donec sollicitudin
+                                            p
+                                                | Aliquam dapibus tincidunt metus.
+                                                span Praesent justo dolor, lobortis.
+                                        .clearfix
+                                    .related-post
+                                        .related-post-left
+                                            a(href='single.html')
+                                                img(src='../public/images/44.jpg', alt=' ')
+                                        .related-post-right
+                                            h4
+                                                a(href='single.html') Donec sollicitudin
+                                            p
+                                                | Aliquam dapibus tincidunt metus.
+                                                span Praesent justo dolor, lobortis.
+                                        .clearfix
+                                    .related-post
+                                        .related-post-left
+                                            a(href='single.html')
+                                                img(src='../public/images/444.jpg', alt=' ')
+                                        .related-post-right
+                                            h4
+                                                a(href='single.html') Donec sollicitudin
+                                            p
+                                                | Aliquam dapibus tincidunt metus.
+                                                span Praesent justo dolor, lobortis.
+                                        .clearfix
+                        .clearfix
+                        .leave-a-comment
+                            h3 Leave your comment Here
+                            form
+                                input(type='text', value='Name', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Name';}", required='')
+                                input(type='text', value='Email', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Email';}", required='')
+                                input(type='text', value='Phone Number', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Phone Number';}", required='')
+                                textarea(onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Type Your Comment here...';}", required='') Type Your Comment here...
+                                input(type='submit', value='Add Comment')
+                // /single
+        // //single
+        // contact
+        .contact-home
+            .map-home
+                iframe(src='https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2482.432383990807!2d0.028213999961443994!3d51.52362882484525!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1423469959819')
+                .map-pos
+                    .login-pad
+                        h2 MAKE AN APPOINTMENT
+                        form
+                            input(type='text', value='Username', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Username';}", required='')
+                            input(type='text', value='Email', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Email';}", required='')
+                            input(type='text', value='Mobile', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Mobile';}", required='')
+                            label.checkbox
+                                input(type='checkbox', name='checkbox', checked='')
+                                i
+                                | Subscribe in your Newsletter
+                            textarea(placeholder='Message', required='')
+                            input(type='submit', value='SEND')
+                    .clearfix
+        // //contact
+        // copy-right
+        .copy-right
+            .container
+                p
+                    | Copyright © 2016.Company name All rights reserved.More Templates
+                    a(href='http://www.cssmoban.com/', target='_blank', title='模板之家') 模板之家
+                    |  - Collect from
+                    a(href='http://www.cssmoban.com/', title='网页模板', target='_blank') 网页模板
+        // //copy-right
+        // Bootstrap core JavaScript
+        // Placed at the end of the document so the pages load faster
+        // js
+        script(src='../public/js/bootstrap.js')
+        // js
+        // smooth scrolling
+        script(type='text/javascript').
+            $(document).ready(function() {
+                /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+                */
+                $().UItoTop({ easingType: 'easeOutQuart' });
+            });
+        a#toTop(href='#', style='display: block;')
+            span#toTopHover(style='opacity: 1;')
+        // //smooth scrolling
