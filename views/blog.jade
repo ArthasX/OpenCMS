@@ -3,10 +3,10 @@ block content
     .blog-page
         .container
             h3.tittle BLOGS
-             //- var page=pages;
-            p #{ss}
-            p #{blogs}
-            p #{blogs[0].title}
+                //- var page=pages;
+            //p #{ss}
+            //p #{blogs}
+            //p #{blogs[0].title}
             each blog in blogs
                 .blog-pag
                     .blog-page-grids
@@ -14,41 +14,34 @@ block content
                             h3
                                 a(href="single.html")=blog.title
 
-                            p='发布日期:'+blog.date
-
+                            p='发布日期:' + blog.date.toLocaleString()
                         .clearfix
-
                     .blog-page-grids-bottom
                         .blog-page-grids-bot
                             a(href="single.html")
                                 img(src="images/4.jpg", alt=" ")
                         //content
                         .blog-page-grids-bot1
-                            h4 porttitor accumsan tincidunt
-                            p=blog.content
+                            //h4=blog.title
+                            p=blog.abstract
                             .more
                                 a.hvr-outline-out.button2(href="single.html") Read More
-
                     .clearfix
-
-
-
-
             nav
 
-                ul.pagination.blg-pg.text-center
-                    li
-                        a(href="#", aria-label="Previous")
-                            span(aria-hidden="true") «
+            ul.pagination.blg-pg.text-center
+                li
+                    a(href=preUrl, aria-label="Previous")
+                        span(aria-hidden="true") «
 
-                    - for (var index=1;index<=pages;index++){
-                            li
-                                a(href="?pages="+index)=index
-                    - }
+                - for (var index=startPage;index<=pages;index++){
+                li
+                    a(href="?page=" + index)=index
+                - }
 
-                    li
-                        a(href="#", aria-label="Next")
-                            span(aria-hidden="true") »
+                li
+                    a(href=nextUrl, aria-label="Next")
+                        span(aria-hidden="true") »
     // //blog
 
     // copy-right
@@ -57,7 +50,7 @@ block content
     // Bootstrap core JavaScript
     // Placed at the end of the document so the pages load faster
     // js
-    script(src="js/bootstrap.js")
+    script(src="/js/bootstrap.js")
     // js
     // smooth scrolling
     script(type="text/javascript").

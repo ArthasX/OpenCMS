@@ -6,14 +6,20 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "async": "^1.5.2",
     "bluebird": "^3.5.1",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
     "jade": "~1.11.0",
+    "lodash": "^4.17.5",
+    "log4js": "^2.5.3",
+    "marked": "^0.3.17",
+    "moment": "^2.21.0",
     "mongoose": "^5.0.9",
     "morgan": "~1.9.0",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "ueditor": "^1.2.3"
   }
 }

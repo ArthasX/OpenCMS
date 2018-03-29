@@ -1,15 +1,21 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
-var logger = require('morgan');
+// var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var logger = require('./lib/logger.lib');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var about = require('./routes/about');
-var blog = require('./routes/blog');
+var blogs = require('./routes/blogs');
+var content = require('./routes/content');
 var contact = require('./routes/contact');
+
+
+//DB
+var database = require('./lib/databas.lib');
+database.connect(()=>{console.log('数据库连接成功')});
 
 var app = express();
 
@@ -19,7 +25,7 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+app.use(logger.access());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
@@ -27,7 +33,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/about', about);
-app.use('/blog', blog);
+app.use('/blogs', blogs.blogs);
+app.use('/content/:id', content.content);
 app.use('/contact', contact);
 // app.use('/users', users);
 
