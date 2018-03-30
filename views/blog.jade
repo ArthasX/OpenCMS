@@ -2,7 +2,7 @@ extends layout
 block content
     .blog-page
         .container
-            h3.tittle BLOGS
+            h3.tittle 新闻资讯
                 //- var page=pages;
             //p #{ss}
             //p #{blogs}
@@ -12,20 +12,23 @@ block content
                     .blog-page-grids
                         .blog-page-grid
                             h3
-                                a(href="single.html")=blog.title
+                                a(href="/content/" + blog._id)=blog.title
 
                             p='发布日期:' + blog.date.toLocaleString()
                         .clearfix
                     .blog-page-grids-bottom
                         .blog-page-grids-bot
-                            a(href="single.html")
-                                img(src="images/4.jpg", alt=" ")
+                        - if (blog.thumbnail)
+                            a(href="/content/" + blog._id)
+                                img(src=blog.thumbnail.src, alt=" ")
+
+
                         //content
                         .blog-page-grids-bot1
                             //h4=blog.title
                             p=blog.abstract
                             .more
-                                a.hvr-outline-out.button2(href="single.html") Read More
+                                a.hvr-outline-out.button2(href="/content/" + blog._id) Read More
                     .clearfix
             nav
 

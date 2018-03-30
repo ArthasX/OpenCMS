@@ -11,16 +11,24 @@ var about = require('./routes/about');
 var blogs = require('./routes/blogs');
 var content = require('./routes/content');
 var contact = require('./routes/contact');
+var mediaPath = require('./lib/mediapath.lib');
 
 
+mediaPath((mediaPath) => {
+    console.log(mediaPath);
+    global.mediaPath = mediaPath;
+});
 //DB
 var database = require('./lib/databas.lib');
-database.connect(()=>{console.log('数据库连接成功')});
+database.connect(() => {
+    console.log('数据库连接成功')
+});
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+console.log(path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public

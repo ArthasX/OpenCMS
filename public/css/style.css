@@ -1524,8 +1524,9 @@ p.est span{
     margin: 3em 0;
 }
 .sing-img-text{
-	float:left;
-	width:65%;
+	/*float:left;*/
+	/*width:65%;*/
+    padding:0 10% 0 10%
 }
 .sing-img-text-left{
 	float:right;

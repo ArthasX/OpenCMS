@@ -1,5 +1,5 @@
 {
-    "rootDir" : "C:/Users/KJB-001064/Documents/GitHub/xinyu",
+    "rootDir" : "../",
     "mediaPath" : "xinyu/public"
 }
 

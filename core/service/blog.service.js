@@ -4,12 +4,85 @@ var marked = require('marked');
 var categories = require('../models/categories.model');
 var blogModel = require('../models/blog.mode');
 var mediaModel = require('../models/media.model');
-var user = require('../models/users.model');
+var user = require('../models/users.model')
+var moment = require('moment');
 /**
  *
  * @param options
  * @param callback
  */
+// exports.one = function (options, callback) {
+//     var query = {};
+//     var reading = true;
+//     var markdown = false;
+//     console.log("blogModel.options", options);
+//     if (options._id) query._id = options._id;
+//     if (options.status) query.status = options.status;
+//     if (options.alias) query.alias = options.alias;
+//     if (_.isBoolean(options.reading)) reading = options.reading;
+//     if (_.isBoolean(options.markdown)) markdown = options.markdown;
+//     console.log("begin to find one");
+//     blogModel.findOne(query)
+//         .select('status category title alias user date reading thumbnail media abstract content tags extensions')
+//         .populate('category', 'name path')
+//         .populate('thumbnail', 'filename description date src')
+//         .populate('user', 'nickname email')
+//         .populate('media', 'fileName description date src')
+//         .exec(function (err, content) {
+//             console.log("blogModel.findOne", content);
+//             if (err) {
+//                 err.type = 'database';
+//                 return callback(err);
+//             }
+//             console.log("blogModel.findOne", content);
+//             if (!content) return callback();
+//
+//             async.waterfall([
+//                 //阅读量+1
+//                 function (callback) {
+//                     if (reading) {
+//                         console.log("reading ",true);
+//                         exports.reading({_id: content._id}, function (err, reading) {
+//                             if (err) return callback(err);
+//
+//                             if (reading) {
+//                                 callback(null, reading);
+//                             } else {
+//                                 callback(null, null);
+//                             }
+//                         });
+//                     } else {
+//                         callback(null, null);
+//                     }
+//                 },
+//                 function (reading, callback) {
+//                     if (content.thumbnail) var thumbnailSrc = content.thumbnail.src;
+//                     if (!_.isEmpty(content.media)) var meiaSrc = _.map(content.media, 'src');
+//                     content = content.toObject();
+//                     if (_.get(content, 'category.path')) content.url = content.category.path + '/' + content.alias;
+//
+//                     if (reading) content.reading = reading;
+//                     if (content.content && !markdown) content.content = marked(content.content);
+//
+//                     if (content.thumbnail) content.thumbnail.src = thumbnailSrc;
+//                     if (!_.isEmpty(content.media)) {
+//                         _.forEach(content.media, function (medium, index) {
+//                             medium.src = meiaSrc[index];
+//                         });
+//                     }
+//
+//                     delete content.category;
+//
+//                     if (!markdown) delete content.alias;
+//
+//                     if (_.get(content, 'reading.createAt')) delete content.reading.createAt;
+//
+//                     callback(null, content);
+//                 }
+//             ], callback);
+//         });
+//     console.log("end find");
+// };
 exports.one = function (options, callback) {
     var query = {};
     var reading = true;
@@ -21,9 +94,10 @@ exports.one = function (options, callback) {
     if (_.isBoolean(options.reading)) reading = options.reading;
     if (_.isBoolean(options.markdown)) markdown = options.markdown;
 
-    blogModel.findOne(query).select('status category title alias user date reading thumbnail media abstract content tags extensions')
+    blogModel.findOne(query)
+        .select('status category title alias user date reading thumbnail media abstract content tags extensions')
         .populate('category', 'name path')
-        .populate('thumbnail', 'filename description date src')
+        .populate('thumbnail', 'fileName description date src')
         .populate('user', 'nickname email')
         .populate('media', 'fileName description date src')
         .exec(function (err, content) {
@@ -35,7 +109,7 @@ exports.one = function (options, callback) {
             if (!content) return callback();
 
             async.waterfall([
-                //阅读量+1
+                // 阅读量 +1
                 function (callback) {
                     if (reading) {
                         exports.reading({_id: content._id}, function (err, reading) {
@@ -50,9 +124,11 @@ exports.one = function (options, callback) {
                     } else {
                         callback(null, null);
                     }
-                }, function (reading, callback) {
+                },
+                function (reading, callback) {
                     if (content.thumbnail) var thumbnailSrc = content.thumbnail.src;
                     if (!_.isEmpty(content.media)) var meiaSrc = _.map(content.media, 'src');
+
                     content = content.toObject();
                     if (_.get(content, 'category.path')) content.url = content.category.path + '/' + content.alias;
 
@@ -74,11 +150,9 @@ exports.one = function (options, callback) {
 
                     callback(null, content);
                 }
-
             ], callback);
         });
 };
-
 /**
  * 多条内容
  * @param {Object} options
@@ -175,10 +249,84 @@ exports.total = function (callback) {
 };
 
 exports.reading = function (options, callback) {
+    if (!options._id) return callback(null);
 
+    blogModel.findById(options._id)
+        .exec(function (err, content) {
+            if (err) {
+                err.type = 'database';
+                return callback(err);
+            }
+
+            if (!content) return callback();
+
+            content.reading.total = content.reading.total + 1;
+
+            if (content.reading.createAt.day <= new Date(moment(000000, 'hhmmss').format())) {
+                content.reading.day = 1;
+                content.reading.createAt.day = new Date();
+            } else {
+                content.reading.day = content.reading.day + 1;
+            }
+
+            if (content.reading.createAt.week <= new Date(moment(000000, 'hhmmss').isoWeekday(1).format())) {
+                content.reading.week = 1;
+                content.reading.createAt.week = new Date();
+            } else {
+                content.reading.week = content.reading.week + 1;
+            }
+
+            if (content.reading.createAt.month <= new Date(moment(000000, 'hhmmss').set('date', 1).format())) {
+                content.reading.month = 1;
+                content.reading.createAt.month = new Date();
+            } else {
+                content.reading.month = content.reading.month + 1;
+            }
+
+            content.save(function (err) {
+                if (err) logger.database().error(__filename, err);
+            });
+
+            callback(null, content.toObject().reading);
+        });
 };
 exports.checkAlias = function (options, callback) {
+    if (!options.alias) {
+        return callback({
+            type: 'system',
+            error: 'alias 不能为空'
+        });
+    }
 
+    blogModel.find({
+        alias: {
+            $in: [options.alias, new RegExp('^' + options.alias + '-\\d+$')]
+        }
+    }, 'alias', function (err, contents) {
+        if (err) {
+            err.type = 'database';
+            return callback(err);
+        }
+
+        if (contents.length === 0 || (contents.length === 1 && contents[0]._id.toString() === options._id)) {
+            callback(null, options.alias);
+        } else {
+            var aliasSuffix = [];
+
+            for (var i = 0; i < contents.length; i++) {
+                var suffix = contents[i].alias.match(/-(\d+)$/);
+                if (suffix) aliasSuffix.push(suffix[1]);
+            }
+
+            if (aliasSuffix.length > 0) {
+                options.alias = options.alias + '-' + (Number(Math.max.apply(null, aliasSuffix)) + 1);
+            } else {
+                options.alias = options.alias + '-2';
+            }
+
+            callback(null, options.alias);
+        }
+    });
 };
 
 exports.save = function (options, callback) {
@@ -302,7 +450,7 @@ exports.save = function (options, callback) {
                 });
             },
             saveContent: ['checkAlias', function (callback) {
-                new contentsModel(data).save(function (err, content) {
+                new blogModel(data).save(function (err, content) {
                     callback(err, content);
                 });
             }],

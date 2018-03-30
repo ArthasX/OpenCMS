@@ -93,7 +93,7 @@ exports.blogs = function (req, res) {
         else {
             nextUrl = "?page=" + currentPage + 5;
         }
-        console.log(result)
+        console.log(result);
         let blogs = result.contents;
 
         console.log(JSON.stringify(blogs));
