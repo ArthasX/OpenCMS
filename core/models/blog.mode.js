@@ -123,4 +123,5 @@ var blogSchema = new mongoose.Schema({
     id: false
 
 });
+// mongoose.createConnection(config);
 module.exports = mongoose.model('Blogs', blogSchema);

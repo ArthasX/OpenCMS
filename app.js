@@ -20,8 +20,11 @@ mediaPath((mediaPath) => {
 });
 //DB
 var database = require('./lib/databas.lib');
-database.connect(() => {
-    console.log('数据库连接成功')
+database.connect((err) => {
+    if (err)
+        console.log(err);
+    else
+        console.log("数据库连接成功");
 });
 
 var app = express();
