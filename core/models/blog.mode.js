@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-
+var config = require("../../config/database.config")
 /**
  * 资讯
  */
@@ -123,5 +123,4 @@ var blogSchema = new mongoose.Schema({
     id: false
 
 });
-
 module.exports = mongoose.model('Blogs', blogSchema);

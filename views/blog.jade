@@ -33,6 +33,7 @@ block content
             nav
 
             ul.pagination.blg-pg.text-center
+                - if(pages>0){
                 li
                     a(href=preUrl, aria-label="Previous")
                         span(aria-hidden="true") «
@@ -45,6 +46,7 @@ block content
                 li
                     a(href=nextUrl, aria-label="Next")
                         span(aria-hidden="true") »
+                - }
     // //blog
 
     // copy-right
