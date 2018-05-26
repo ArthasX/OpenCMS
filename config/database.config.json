@@ -3,5 +3,5 @@
     "port":27017,
     "db":"cms",
     "user":"zhulinxian",
-    "pass":"zhulinxian.3"
+    "pass":"zhulinxian"
 }
