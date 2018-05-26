@@ -1,10 +1,10 @@
 div.copy-right
     .container.text-center
         .row
-            a(href="/") 主页
-            a(href="/about") 关于我们
-            a(href="/blogs") 新闻资讯
-            a(href="/contact") 联系我们
+            a.copy-a(href="/") 主页
+            a.copy-a(href="/about") 关于我们
+            a.copy-a(href="/blogs") 新闻资讯
+            a.copy-a(href="/contact") 联系我们
 
 
 
@@ -16,7 +16,7 @@ div.copy-right
             document.getElementById("copy").innerHTML = `Copyright &copy; ${year}.xinyuxinli All rights reserved.`
         });
     style.
-        a {
+        .copy-a {
             color: white;
             font-size: 14px;
             margin: 0 20px 0 20px;
