@@ -9,42 +9,11 @@ html
             .logo
                 h1
                     a(href="/") Relax & Enjoy
-
-            //.search
-            //  a.play-icon.popup-with-zoom-anim(href="#small-dialog")
-            //    i.glyphicon.glyphicon-search
-            //
-            //script(src="js/jquery.magnific-popup.js", type="text/javascript")
-
-            //#small-dialog.mfp-hide
-            //  .search-top
-            //    .login
-            //      input(type="submit", value="")
-            //
-            //      input(type="text", value="Type something...", onfocus="this.value = '';", onblur="if (this.value == '') {this.value = '';}")
-            //
-              script.
-                  $(document).ready(function() {
-                      $('.popup-with-zoom-anim').magnificPopup({
-                          type: 'inline',
-                          fixedContentPos: false,
-                          fixedBgPos: true,
-                          overflowY: 'auto',
-                          closeBtnInside: true,
-                          preloader: false,
-                          midClick: true,
-                          removalDelay: 300,
-                          mainClass: 'my-mfp-zoom-in'
-                      });
-                  });
-
             .banner-info
                 script(src="js/responsiveslides.min.js")
 
                 script.
-                    // You can also use "$(window).load(function() {"
                     $(function () {
-                        // Slideshow 4
                         $("#slider3").responsiveSlides({
                             auto: true,
                             pager: false,
@@ -60,81 +29,46 @@ html
                         });
                     });
 
-                #top.callbacks_container
-                    ul#slider3.rslides
-                        li
-                            .banner-text
-                                h3
-                                    MAKE YOUR LIFE MORE
-                                span  HEALTHY AND SAFE
 
-                                p
-                                    Neque porro quisquam est, qui dolorem ipsum quia
-                                    dolor sit amet, consectetur, adipisci velit, sed
-                                    quia non numquam eius modi tempora incidunt ut
-                                    labore et dolore magnam aliquam quaerat voluptatem.
-
-                                .read.text-center
-                                    a.hvr-outline-out.button2(href="single.html") READ MORE
-
-                        li
-                            .banner-text
-                                h3
-                                    BETTER HEALTH CARE IS CLOSER
-                                span  THAN YOU THINK
-
-                                p
-                                    Neque porro quisquam est, qui dolorem ipsum quia
-                                    dolor sit amet, consectetur, adipisci velit, sed
-                                    quia non numquam eius modi tempora incidunt ut
-                                    labore et dolore magnam aliquam quaerat voluptatem.
-
-                                .read.text-center
-                                    a.hvr-outline-out.button2(href="single.html") READ MORE
-
-                .down-arrow.text-center
-                    a.scroll(href="#banner-bottom")
-                        span.glyphicon.glyphicon-chevron-down(aria-hidden="true")
         // //banner
 
         // banner-bottom
         #banner-bottom.banner-bottom
-            .container
-                h3.tittle 欢迎来到心育
-
-                p 啊xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            .container.text-center
+                h3.title.text-center 欢迎来到心育
+                br
+                p.text-center 当你要去面对心理医生的时候，你是否做好了重新选择的准备？你是否愿意自己来承担一些责任，而不是希望别人或环境来帮助你承担？你是否愿意接受不同的内心体验来把他们看成是人生必须的东西？这些更能决定你咨询是否有效果。看与不看由你自己决定，心理医生无权来做这样的建议。
 
 
                 ul#sti-menu.sti-menu
                     li(data-hovercolor="#fff")
                         a(href="#")
-                            h4.sti-item(data-type="mText") HEALTH
+                            h4.sti-item(data-type="mText") HEART
 
-                            p.sti-item(data-type="sText") Voluptatem quia voluptas
+                            p.sti-item(data-type="sText") 给心灵一个约定，相信心语过后便是晴天
 
-                            span.sti-icon.glyphicon.glyphicon-plus.sti-item(data-type="icon")
-
-                    li(data-hovercolor="#fff")
-                        a(href="#")
-                            h4.sti-item(data-type="mText") SURGERY
-
-                            p.sti-item(data-type="sText") Voluptatem quia voluptas
-
-                            span.sti-icon.glyphicon.glyphicon-scissors.sti-item(data-type="icon")
+                            span.sti-icon.glyphicon.glyphicon-heart.sti-item(data-type="icon")
 
                     li(data-hovercolor="#fff")
                         a(href="#")
-                            h4.sti-item(data-type="mText") CAREERS
+                            h4.sti-item(data-type="mText") OPEN
+                            p.sti-item(data-type="sText") 让生活失去色彩的不是伤痛，而是内心世界的困惑
 
-                            p.sti-item(data-type="sText") Voluptatem quia voluptas
-
-                            span.sti-icon.glyphicon.glyphicon-education.sti-item(data-type="icon")
+                            span.sti-icon.glyphicon.glyphicon-eye-open.sti-item(data-type="icon")
 
                     li(data-hovercolor="#fff")
                         a(href="#")
-                            h4.sti-item(data-type="mText") PLANNING
+                            h4.sti-item(data-type="mText") SMILE
 
-                            p.sti-item(data-type="sText") Voluptatem quia voluptas
+                            p.sti-item(data-type="sText") 让脸上失去笑容的不是磨难，而是禁闭心灵的缄默
+
+                            span.sti-icon.glyphicon.fa.fa-smile-o.sti-item(data-type="icon")
+
+                    li(data-hovercolor="#fff")
+                        a(href="#")
+                            h4.sti-item(data-type="mText") LIFE
+
+                            p.sti-item(data-type="sText") 美好生活源与健康身心，与我沟通，你的生活会更精彩
 
                             span.sti-icon.glyphicon.glyphicon-apple.sti-item(data-type="icon")
 
@@ -156,107 +90,73 @@ html
                                 }
                             });
                         });
-        // //banner-bottom
-        // measure
-            //.measure
-            //  .container
-            //    h3 WE MEASURE SUCCESS IN SMILES AND IMPROVEMENT IN HEALTH AND QUALITY OF LIFE.
-        // measure
-        // qualified
-            //.qualified
-            //  .container
-            //    h3.tittle ONLY QUALIFIED MEDICAL SERVICES
-            //
-            //    .qualified-grids
-            //      .col-md-7.qualify-left
-            //        .qualify-left-grids
-            //          .qua-left-gd.text-right
-            //            h4 voluptatem quia
-            //
-            //            p
-            //               Neque porro quisquam est, qui dolorem ipsum quia
-            //               dolor sit amet, consectetur, adipisci velit, sed
-            //               quia non numquam eius.
-            //
-            //          .qua-right-gd.text-center
-            //            img(src="images/t2.png", alt="")
-            //
-            //          .clearfix
-            //
-            //        .qualify-left-grids
-            //          .qua-left-gd.text-right
-            //            h4 voluptatem quia
-            //
-            //            p
-            //               Neque porro quisquam est, qui dolorem ipsum quia
-            //               dolor sit amet, consectetur, adipisci velit, sed
-            //               quia non numquam eius.
-            //
-            //          .qua-right-gd.text-center
-            //            img(src="images/t3.png", alt="")
-            //
-            //          .clearfix
-            //
-            //      .col-md-5.qualify-right.grid
-            //        figure.effect-moses
-            //          img(src="images/aa.jpg", alt="")
-            //
-            //          figcaption
-            //            h4
-            //               MEDI
-            //              span CURE
-            //
-            //            p voluptatem quia voluptas sit.
-            //
-            //      .clearfix
-            // qualified
+
         .welcome-grids
             .container
-                h3.tittle 欢迎来到心育
+                #top.callbacks_container
+                    ul#slider3.rslides
+                        li
+                            .banner-text
+                                p 能作茧自缚，就要能破茧成蝶，一切修持的根本是强大的自己
+                        li
+                            .banner-text
+                                p 问题的发生不一定都是你的责任，但是改变现状只能靠着你自己，我能做的就是陪着你，让你有勇气走自己想走的路。
+                        li
+                            .banner-text
+                                p 每个人的生活都不是一帆风顺的，遭遇和挫折是你必须的朋友，但一切都是暂时的，遇见我，遇见新的自己。
+                        li
+                            .banner-text
+                                p 心理咨询是让一个人回归人的本质，并拥有自由自在状态的有效途径之一；接受心理咨询亦不是因为我有病，而是较强生命力及追求更高自我成就的象征。
+                        li
+                            .banner-text
+                                p 生活会给我们各种伤痛，但我们会因此而坚强。不放弃、不抛弃，美好的明天就在前方。
+                //.down-arrow.text-center
+                //    a.scroll(href="#banner-bottom")
+                //        span.glyphicon.glyphicon-chevron-down(aria-hidden="true")
 
-                .col-md-3.welcome-grid.text-center
-                    .ih-item.circle.effect9.left_to_right
-                        a(href="#")
-                            .img
-                                img(src="images/22.jpg", alt="")
-
-                            .info
-                                h4 MEDI CURE
-
-                                p Description goes here
-
-                .col-md-3.welcome-grid.text-center
-                    .ih-item.circle.effect9.left_to_right
-                        a(href="#")
-                            .img
-                                img(src="images/3.jpg", alt="")
-
-                            .info
-                                h4 MEDI CURE
-
-                                p Description goes here
-
-                .col-md-3.welcome-grid.text-center
-                    .ih-item.circle.effect9.left_to_right
-                        a(href="#")
-                            .img
-                                img(src="images/2.jpg", alt="")
-
-                            .info
-                                h4 MEDI CURE
-
-                                p Description goes here
-
-                .col-md-3.welcome-grid.text-center
-                    .ih-item.circle.effect9.left_to_right
-                        a(href="#")
-                            .img
-                                img(src="images/111.jpg", alt="")
-
-                            .info
-                                h4 MEDI CURE
-
-                                p Description goes here
+                //.col-md-3.welcome-grid.text-center
+                //    .ih-item.circle.effect9.left_to_right
+                //        a(href="#")
+                //            .img
+                //                img(src="images/22.jpg", alt="")
+                //
+                //            .info
+                //                h4 MEDI CURE
+                //
+                //                p Description goes here
+                //
+                //.col-md-3.welcome-grid.text-center
+                //    .ih-item.circle.effect9.left_to_right
+                //        a(href="#")
+                //            .img
+                //                img(src="images/3.jpg", alt="")
+                //
+                //            .info
+                //                h4 MEDI CURE
+                //
+                //                p Description goes here
+                //
+                //.col-md-3.welcome-grid.text-center
+                //    .ih-item.circle.effect9.left_to_right
+                //        a(href="#")
+                //            .img
+                //                img(src="images/2.jpg", alt="")
+                //
+                //            .info
+                //                h4 MEDI CURE
+                //
+                //                p Description goes here
+                //
+                //.col-md-3.welcome-grid.text-center
+                //    .ih-item.circle.effect9.left_to_right
+                //        a(href="#")
+                //            .img
+                //                img(src="images/111.jpg", alt="")
+                //
+                //            .info
+                //                h4 MEDI CURE
+                //
+                //                p Description goes here
 
                 .clearfix
 

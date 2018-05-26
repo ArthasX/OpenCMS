@@ -1,3 +1,23 @@
 div.copy-right
-    .container
-    p Copyright &copy; 2018.OpenMind All rights reserved.
+    .container.text-center
+        .row
+            a(href="/") 主页
+            a(href="/about") 关于我们
+            a(href="/blogs") 新闻资讯
+            a(href="/contact") 联系我们
+
+
+
+        p#copy
+
+    script.
+        $(function () {
+            var year = new Date().getFullYear();
+            document.getElementById("copy").innerHTML = `Copyright &copy; ${year}.xinyuxinli All rights reserved.`
+        });
+    style.
+        a {
+            color: white;
+            font-size: 14px;
+            margin: 0 20px 0 20px;
+        }
